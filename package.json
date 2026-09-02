@@ -1,0 +1,26 @@
+{
+  "name": "sdk-example",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Minimal HTTP server with an ngrok endpoint",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@ngrok/ngrok": "^1.7.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngrok/node-sdk-example.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ngrok/node-sdk-example/issues"
+  },
+  "homepage": "https://github.com/ngrok/node-sdk-example#readme"
+}
