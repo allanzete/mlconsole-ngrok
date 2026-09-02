@@ -11,15 +11,19 @@ function broadcast(dados) {
 
 function startServer() {
   const server = http.createServer((req, res) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  // Libera qualquer origem (seu site na HostGator ou local)
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  // Libera TODOS os cabeçalhos recebidos para não travar o Preflight
+  res.setHeader("Access-Control-Allow-Headers", "*");
 
-    if (req.method === "OPTIONS") {
-      res.writeHead(204);
-      res.end();
-      return;
-    }
+  if (req.method === "OPTIONS") {
+    res.writeHead(204);
+    res.end();
+    return;
+  }
+  
+  // ... restante do código da rota /stream e /publish
 
     // STREAM SSE UNIVERSAL
     if (req.url.startsWith("/stream") && req.method === "GET") {
